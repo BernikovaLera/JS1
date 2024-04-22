@@ -1,90 +1,89 @@
 //Напишите функцию hello1(), которая при вызове будет возвращать строку «Привет, JavaScript!».
-// function hello1() {
-//     return "Привет, JavaScript!";
-// }
-// console.log(hello1())
+function hello1() {
+    return "Привет, JavaScript!";
+}
+console.log(hello1())
 
 //Напишите функцию hello2(), которая при вызове будет принимать переменную name (например, «Василий») и выводить строку (в нашем случае «Привет, Василий»).  В случае отсутствующего аргумента выводить «Привет, гость»
-// function hello2(name) {
-//     if (name === undefined) {
-//         console.log("Привет, гость");
-//     } else {
-//         console.log("Привет, " + name);
-//     }
-// }
-
-// hello2("Василий"); 
-// hello2();       
+function hello2(name) {
+    if (name === undefined) {
+        console.log("Привет, гость");
+    } else {
+        console.log("Привет, " + name);
+    }
+}
+hello2("Василий"); 
+hello2();       
 
 //Напишите функцию mul(n,m), которая принимает два аргумента и возвращает произведение этих аргументов. Проверьте ее работу.
-// function mul(n, m) {
-//     return n * m;
-// }
-// console.log(mul(3,4))
+function mul(n, m) {
+    return n * m;
+}
+console.log(mul(3,4))
 
 //Создайте функцию repeat(str, n), которая возвращает строку, состоящую и n повторений строки str. n — по умолчанию 2, str — пустая строка
-// function repeat(str, N = 2) {
-//     return str.repeat(N);
-// }
-// console.log(repeat('q'))
+function repeat(str, N = 2) {
+    return str.repeat(N);
+}
+console.log(repeat('q'))
 
 //Создайте функцию rgb(), которая будет принимать три числовых аргумента и возвращать строку вида «rgb(23,100,134)». Если аргументы не заданы, считать их равными нулю. Не проверять переменные на тип данных
-// function rgb(r, g, b) {
-//     r = typeof r !== 'undefined' ? r : 0;
-//     g = typeof g !== 'undefined' ? g : 0;
-//     b = typeof b !== 'undefined' ? b : 0;
-//     return "rgb(" + r + "," + g + "," + b + ")";
-// }
-// console.log(rgb()); 
-// console.log(rgb(23, 100, 134));
+function rgb(r, g, b) {
+    r = typeof r !== 'undefined' ? r : 0;
+    g = typeof g !== 'undefined' ? g : 0;
+    b = typeof b !== 'undefined' ? b : 0;
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+console.log(rgb()); 
+console.log(rgb(23, 100, 134));
 
 
 
 //Создайте функцию avg() , которая будет находить среднее значение по всем своим аргументам (аргументы величины числовые).
-// function avg() {
-//     let sum = 0;
-//     for (let i = 0; i < arguments.length; i++) {
-//         sum += arguments[i];
-//     }
-//     return sum / arguments.length;
-// }
-// console.log(avg(1, 2, 3, 4)); 
+function avg() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum / arguments.length;
+}
+console.log(avg(1, 2, 3, 4)); 
 
 
 
 //Создайте функцию m(a,b) оболочку для mul(). m() должна принимать два аргумента а возвращать результат работы mul() с этими двумя аргументами После выполнения задания поэкспериментируйте, создайте функцию log(), которая будет принимать одно значение, а вызывать  console.log() с этим значением.
-// function mul(a, b) {
-//     return a  *  b;
-// }
-// function m(a, b) {
-//     return mul(a, b);
-// }
-// function log(value) {
-//     console.log(value);
-// }
-// console.log("Умножение чисел:", m(2, 3)); 
-// log(m(2, 3));                       
+function mul(a, b) {
+    return a  *  b;
+}
+function m(a, b) {
+    return mul(a, b);
+}
+function log(value) {
+    console.log(value);
+}
+console.log("Умножение чисел:", m(2, 3)); 
+log(m(2, 3));                       
 
 
 //(*) Напишите функцию operation(m,n,o), в которой m и n — числовые переменные, а o — функциональный литерал, который берет два аргумента и выполняет математическую операцию над ними (например, функция mul() из задания 4.)
-// function operation(m, n, o) {
-//     return o(m, n);
-// }
-// function mul(a, b) {
-//     return a  *  b;
-// }
-// const result = operation(2, 3, mul); 
-// console.log(result); 
+function operation(m, n, o) {
+    return o(m, n);
+}
+function mul(a, b) {
+    return a  *  b;
+}
+const result = operation(2, 3, mul); 
+console.log(result); 
 
 
 //(*) Напишите функцию addN(n), которая вернёт другую функцию. Возвращенная функция должна складывать получаемый аргумент с аргументом n возвращающей функции. Внимание, эта простая на реализацию замыкания.
-// function addN(n) {
-//     return function(x) {
-//         return x + n;
-//     };
-// }
-// const addThree = addN(3);
-// console.log(addThree(5)); 
+function addN(n) {
+    return function(x) {
+        return x + n;
+    };
+}
+const addThree = addN(3);
+console.log(addThree(5)); 
 
 
 //(*) Напишите функцию words(),  которая в зависимости от переданного в нее целочисленного аргумента n, будет выводить слово «товар» в нужно форме («12 товаров», но «22 товара»). По умолчанию аргумент d должен иметь значение 0
